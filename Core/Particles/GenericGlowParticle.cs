@@ -10,7 +10,8 @@ using static Terraria.ModLoader.PlayerDrawLayer;
 using Terraria.Graphics.Renderers;
 using Insignia.Core.Particles;
 using Microsoft.Xna.Framework;
-namespace InsigniaMod.Core.Particles
+
+namespace Insignia.Core.Particles
 {
     public class GenericGlowParticle : Particle
     {

@@ -1,1 +1,13 @@
 NPCs.IcerockSnail.DisplayName: Icerock Snail
+
+Items: {
+	GlacialCrate: {
+		DisplayName: Glacial Crate
+		Tooltip: ""
+	}
+}
+
+Tiles: {
+	GlacialCrateTile.MapEntry: Glacial Crate Tile
+	G.MapEntry: G
+}
