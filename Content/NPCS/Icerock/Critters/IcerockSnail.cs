@@ -10,7 +10,6 @@ namespace Insignia.Content.NPCS.Icerock.Critters
 	{
 		public override void SetStaticDefaults()
 		{
-			//DisplayName.SetDefault("Icerock Snail");
 			Main.npcFrameCount[NPC.type] = Main.npcFrameCount[NPCID.MagmaSnail];
 
 			var value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
@@ -65,8 +64,8 @@ namespace Insignia.Content.NPCS.Icerock.Critters
 				Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
 
 				var d = Dust.NewDustPerfect(NPC.position, DustID.Ice, speed * 5, Scale: 2f);
-				;
-				d.noGravity = true;
+				
+				d.noGravity = false;
 			}
 		}
 		public override void AI()
@@ -76,11 +75,8 @@ namespace Insignia.Content.NPCS.Icerock.Critters
 
 		public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
 		{
-			// Here we can make things happen if this NPC hits a player via its hitbox (not projectiles it shoots, this is handled in the projectile code usually)
-			// Common use is applying buffs/debuffs:
-
+		
 			int buffType = BuffID.Frozen;
-			// Alternatively, you can use a vanilla buff: int buffType = BuffID.Slow;
 
 			int timeToAdd = 2 * 60; //This makes it 5 seconds, one second is 60 ticks
 			target.AddBuff(buffType, timeToAdd);
